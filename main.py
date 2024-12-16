@@ -11,11 +11,11 @@ def caesar(original_text, shift_amount, encode_or_decode):
 
     for letter in original_text:
         if letter not in alphabet:
-            output_text += letter
+            output_text += letter # to handle spaces and symbols
         else:
             shifted_position = alphabet.index(letter) + shift_amount
-            shifted_position %= len(alphabet)
-            output_text += alphabet[shifted_position]
+            shifted_position %= len(alphabet) # in case the number exceeds the length of the alphabet
+            output_text += alphabet[shifted_position] # appends new letter
     print(f"Here is the {encode_or_decode}d result: {output_text}")
 
 
